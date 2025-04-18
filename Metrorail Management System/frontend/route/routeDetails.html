@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Route Details</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            flex: 1;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table th, table td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        table th {
+            background-color: #007bff;
+            color: white;
+        }
+        table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .map-container {
+            margin-top: 20px;
+            height: 500px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        .back-btn {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #007bff;
+            color: white;
+        }
+        .logout-btn {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #ff4d4d;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .logout-btn:hover {
+            background-color: #cc0000;
+        }
+    </style>
+</head>
+<body>
+    <a href="javascript:history.back()" class="btn back-btn">&#8592; Back</a>
+    <div class="container">
+        <h1>Route Details</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Route ID</th>
+                    <th>Source</th>
+                    <th>Destination</th>
+                    <th>Distance (km)</th>
+                    <th>Estimated Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>001</td>
+                    <td>Station A</td>
+                    <td>Station B</td>
+                    <td>10</td>
+                    <td>15 min</td>
+                </tr>
+                <tr>
+                    <td>002</td>
+                    <td>Station B</td>
+                    <td>Station C</td>
+                    <td>8</td>
+                    <td>12 min</td>
+                </tr>
+                <!-- Add more route rows as needed -->
+            </tbody>
+        </table>
+
+        <div class="map-container">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.913387421601!2d90.3665098149824!3d23.750885584590048!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8553d0d4f85%3A0x7e6355eb502947cb!2sDhaka%20Metro%20Rail!5e0!3m2!1sen!2sbd!4v1696403408563!5m2!1sen!2sbd" 
+                width="100%" 
+                height="100%" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </div>
+    <footer>
+        <a href="logout.php" class="logout-btn">Logout</a>
+    </footer>
+</body>
+</html>

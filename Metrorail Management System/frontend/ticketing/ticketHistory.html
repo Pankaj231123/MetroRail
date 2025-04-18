@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket History</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            flex: 1;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table th, table td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        table th {
+            background-color: #007bff;
+            color: white;
+        }
+        table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        .back-btn {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #007bff;
+            color: white;
+        }
+        .logout-btn {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #ff4d4d;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .logout-btn:hover {
+            background-color: #cc0000;
+        }
+    </style>
+</head>
+<body>
+    <a href="javascript:history.back()" class="btn back-btn">&#8592; Back</a>
+    <div class="container">
+        <h1>Ticket History</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Ticket ID</th>
+                    <th>Train Number</th>
+                    <th>Passenger Name</th>
+                    <th>Source</th>
+                    <th>Destination</th>
+                    <th>Travel Date</th>
+                    <th>Seats</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>001</td>
+                    <td>12345</td>
+                    <td>John Doe</td>
+                    <td>City A</td>
+                    <td>City B</td>
+                    <td>2024-12-31</td>
+                    <td>2</td>
+                    <td>Confirmed</td>
+                </tr>
+                <tr>
+                    <td>002</td>
+                    <td>67890</td>
+                    <td>Jane Smith</td>
+                    <td>City C</td>
+                    <td>City D</td>
+                    <td>2025-01-05</td>
+                    <td>1</td>
+                    <td>Cancelled</td>
+                </tr>
+                <!-- Add more ticket history rows as needed -->
+            </tbody>
+        </table>
+    </div>
+    <footer>
+        <a href="logout.php" class="logout-btn">Logout</a>
+    </footer>
+</body>
+</html>

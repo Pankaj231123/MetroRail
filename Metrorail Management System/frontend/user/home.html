@@ -1,0 +1,115 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MetroRail Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: #003366;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        .hero {
+            position: relative;
+            background: url('MetroImages.png') no-repeat center center/cover;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content {
+            position: relative;
+            color: white;
+            text-align: center;
+            z-index: 2;
+        }
+
+        .hero-content h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .buttons a {
+            text-decoration: none;
+            color: white;
+            background: #0066cc;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: background 0.3s;
+        }
+
+        .buttons a:hover {
+            background: #004d99;
+        }
+
+        footer {
+            background: #003366;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to MetroRail</h1>
+    </header>
+
+    <div class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h2>Experience Seamless Connectivity with MetroRail</h2>
+            <p>Efficient, Reliable, and Modern Urban Transport</p>
+            <div class="buttons">
+                <a href="login.php" id="user-login">User Login</a>
+                <a href="employeelogin.php" id="employee-login">Employee Login</a>
+                <a href="adminlogin.php" id="admin-login">Admin Login</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 MetroRail. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

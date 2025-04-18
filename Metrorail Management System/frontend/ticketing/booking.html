@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metro Booking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .booking-form {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        label {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        input[type="text"], input[type="number"], input[type="date"], input[type="time"], select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            margin-top: 30px;
+        }
+
+        .back-button {
+            position: left;
+            top: 20px;
+            left: 20px;
+            padding: 10px 15px;
+            background-color: #71b81b;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .back-button:hover {
+            background-color: #bbb;
+        }
+
+        .money-calculator {
+            width: 300px;
+            margin-top: 20px;
+            background-color: #f1f1f1;
+            padding: 15px;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .money-calculator input, .money-calculator select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .total-cost {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Dhaka Metro Booking</h1>
+</header>
+
+<!-- Back Button -->
+<button class="back-button" onclick="window.history.back()">Back</button>
+
+<div class="container">
+    <!-- Booking Form -->
+    <form action="#" method="post" class="booking-form">
+        <h2>Book Your Ticket</h2>
+        <label for="id"> Passenger ID</label>
+        <input type="text" id="id" name="id" required>
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required placeholder="Enter your full name">
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required placeholder="Enter your age">
+
+        <label for="from">From Station:</label>
+        <select id="from" name="from" required>
+            <option value="uttaraNorth">Uttara North</option>
+            <option value="uttaraSouth">Uttara South</option>
+            <option value="jasimuddin">Jasimuddin</option>
+            <option value="shahjalalUniversity">Shahjalal University of Science and Technology</option>
+            <option value="mirpur12">Mirpur-12</option>
+            <option value="mirpur10">Mirpur-10</option>
+            <option value="agargaon">Agargaon</option>
+            <option value="farmgate">Farmgate</option>
+            <option value="shaplaChattar">Shapla Chattar</option>
+            <option value="banglamotor">Banglamotor</option>
+            <option value="shahbagh">Shahbagh</option>
+            <option value="dhakaUniversity">Dhaka University</option>
+            <option value="motijheel">Motijheel</option>
+            <option value="kamalapur">Kamalapur</option>
+        </select>
+
+        <label for="to">To Station:</label>
+        <select id="to" name="to" required>
+            <option value="uttaraNorth">Uttara North</option>
+            <option value="uttaraSouth">Uttara South</option>
+            <option value="jasimuddin">Jasimuddin</option>
+            <option value="shahjalalUniversity">Shahjalal University of Science and Technology</option>
+            <option value="mirpur12">Mirpur-12</option>
+            <option value="mirpur10">Mirpur-10</option>
+            <option value="agargaon">Agargaon</option>
+            <option value="farmgate">Farmgate</option>
+            <option value="shaplaChattar">Shapla Chattar</option>
+            <option value="banglamotor">Banglamotor</option>
+            <option value="shahbagh">Shahbagh</option>
+            <option value="dhakaUniversity">Dhaka University</option>
+            <option value="motijheel">Motijheel</option>
+            <option value="kamalapur">Kamalapur</option>
+        </select>
+
+        <label for="date">Date of Travel:</label>
+        <input type="date" id="date" name="date" required>
+
+        <label for="time">Time of Travel:</label>
+        <input type="time" id="time" name="time" required>
+
+        <button type="submit">Book Ticket</button>
+    </form>
+
+    <!-- Money Calculator Section (Right Side) -->
+    <div class="money-calculator">
+        <h3>Calculate Fare</h3>
+        <label for="calc-from">From Station:</label>
+        <select id="calc-from">
+            <option value="uttaraNorth">Uttara North</option>
+            <option value="uttaraSouth">Uttara South</option>
+            <option value="jasimuddin">Jasimuddin</option>
+            <option value="shahjalalUniversity">Shahjalal University of Science and Technology</option>
+            <option value="mirpur12">Mirpur-12</option>
+            <option value="mirpur10">Mirpur-10</option>
+            <option value="agargaon">Agargaon</option>
+            <option value="farmgate">Farmgate</option>
+            <option value="shaplaChattar">Shapla Chattar</option>
+            <option value="banglamotor">Banglamotor</option>
+            <option value="shahbagh">Shahbagh</option>
+            <option value="dhakaUniversity">Dhaka University</option>
+            <option value="motijheel">Motijheel</option>
+            <option value="kamalapur">Kamalapur</option>
+        </select>
+
+        <label for="calc-to">To Station:</label>
+        <select id="calc-to">
+            <option value="uttaraNorth">Uttara North</option>
+            <option value="uttaraSouth">Uttara South</option>
+            <option value="jasimuddin">Jasimuddin</option>
+            <option value="shahjalalUniversity">Shahjalal University of Science and Technology</option>
+            <option value="mirpur12">Mirpur-12</option>
+            <option value="mirpur10">Mirpur-10</option>
+            <option value="agargaon">Agargaon</option>
+            <option value="farmgate">Farmgate</option>
+            <option value="shaplaChattar">Shapla Chattar</option>
+            <option value="banglamotor">Banglamotor</option>
+            <option value="shahbagh">Shahbagh</option>
+            <option value="dhakaUniversity">Dhaka University</option>
+            <option value="motijheel">Motijheel</option>
+            <option value="kamalapur">Kamalapur</option>
+        </select>
+
+        <button type="button" onclick="calculateFare()">Calculate Fare</button>
+
+        <div class="total-cost" id="total-cost">Total Cost: 0 BDT</div>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2025 Dhaka Metro. All Rights Reserved.</p>
+</footer>
+
+<script>
+    // Simple fare calculation logic
+    const fareStructure = {
+    'uttaraNorth': {
+        'uttaraSouth': 15,
+        'jasimuddin': 25,
+        'shahjalalUniversity': 30,
+        'mirpur12': 20,
+        'mirpur10': 18,
+        'agargaon': 22,
+        'farmgate': 27,
+        'shaplaChattar': 24,
+        'banglamotor': 26,
+        'shahbagh': 23,
+        'dhakaUniversity': 28,
+        'motijheel': 29,
+        'kamalapur': 30
+    },
+    'uttaraSouth': {
+        'uttaraNorth': 15,
+        'jasimuddin': 20,
+        'shahjalalUniversity': 25,
+        'mirpur12': 18,
+        'mirpur10': 22,
+        'agargaon': 23,
+        'farmgate': 27,
+        'shaplaChattar': 21,
+        'banglamotor': 19,
+        'shahbagh': 22,
+        'dhakaUniversity': 26,
+        'motijheel': 28,
+        'kamalapur': 29
+    },
+    'jasimuddin': {
+        'uttaraNorth': 25,
+        'uttaraSouth': 20,
+        'shahjalalUniversity': 15,
+        'mirpur12': 17,
+        'mirpur10': 22,
+        'agargaon': 20,
+        'farmgate': 18,
+        'shaplaChattar': 19,
+        'banglamotor': 22,
+        'shahbagh': 20,
+        'dhakaUniversity': 23,
+        'motijheel': 24,
+        'kamalapur': 25
+    },
+    'shahjalalUniversity': {
+        'uttaraNorth': 30,
+        'uttaraSouth': 25,
+        'jasimuddin': 15,
+        'mirpur12': 22,
+        'mirpur10': 28,
+        'agargaon': 26,
+        'farmgate': 30,
+        'shaplaChattar': 27,
+        'banglamotor': 24,
+        'shahbagh': 29,
+        'dhakaUniversity': 22,
+        'motijheel': 31,
+        'kamalapur': 32
+    },
+    'mirpur12': {
+        'uttaraNorth': 20,
+        'uttaraSouth': 18,
+        'jasimuddin': 17,
+        'shahjalalUniversity': 22,
+        'mirpur10': 15,
+        'agargaon': 19,
+        'farmgate': 21,
+        'shaplaChattar': 22,
+        'banglamotor': 23,
+        'shahbagh': 19,
+        'dhakaUniversity': 24,
+        'motijheel': 26,
+        'kamalapur': 27
+    },
+    'mirpur10': {
+        'uttaraNorth': 18,
+        'uttaraSouth': 22,
+        'jasimuddin': 22,
+        'shahjalalUniversity': 28,
+        'mirpur12': 15,
+        'agargaon': 21,
+        'farmgate': 23,
+        'shaplaChattar': 24,
+        'banglamotor': 27,
+        'shahbagh': 21,
+        'dhakaUniversity': 25,
+        'motijheel': 29,
+        'kamalapur': 30
+    },
+    'agargaon': {
+        'uttaraNorth': 22,
+        'uttaraSouth': 23,
+        'jasimuddin': 20,
+        'shahjalalUniversity': 26,
+        'mirpur12': 19,
+        'mirpur10': 21,
+        'farmgate': 25,
+        'shaplaChattar': 22,
+        'banglamotor': 24,
+        'shahbagh': 23,
+        'dhakaUniversity': 27,
+        'motijheel': 30,
+        'kamalapur': 32
+    },
+    'farmgate': {
+        'uttaraNorth': 27,
+        'uttaraSouth': 27,
+        'jasimuddin': 18,
+        'shahjalalUniversity': 30,
+        'mirpur12': 21,
+        'mirpur10': 23,
+        'agargaon': 25,
+        'shaplaChattar': 24,
+        'banglamotor': 27,
+        'shahbagh': 26,
+        'dhakaUniversity': 29,
+        'motijheel': 31,
+        'kamalapur': 32
+    },
+    'shaplaChattar': {
+        'uttaraNorth': 24,
+        'uttaraSouth': 21,
+        'jasimuddin': 19,
+        'shahjalalUniversity': 27,
+        'mirpur12': 22,
+        'mirpur10': 24,
+        'agargaon': 22,
+        'farmgate': 24,
+        'banglamotor': 25,
+        'shahbagh': 20,
+        'dhakaUniversity': 28,
+        'motijheel': 30,
+        'kamalapur': 32
+    },
+    'banglamotor': {
+        'uttaraNorth': 26,
+        'uttaraSouth': 19,
+        'jasimuddin': 22,
+        'shahjalalUniversity': 24,
+        'mirpur12': 23,
+        'mirpur10': 27,
+        'agargaon': 24,
+        'farmgate': 27,
+        'shaplaChattar': 25,
+        'shahbagh': 22,
+        'dhakaUniversity': 30,
+        'motijheel': 32,
+        'kamalapur': 35
+    },
+    'shahbagh': {
+        'uttaraNorth': 23,
+        'uttaraSouth': 22,
+        'jasimuddin': 20,
+        'shahjalalUniversity': 29,
+        'mirpur12': 19,
+        'mirpur10': 21,
+        'agargaon': 23,
+        'farmgate': 26,
+        'shaplaChattar': 20,
+        'banglamotor': 22,
+        'dhakaUniversity': 28,
+        'motijheel': 33,
+        'kamalapur': 34
+    },
+    'dhakaUniversity': {
+        'uttaraNorth': 28,
+        'uttaraSouth': 26,
+        'jasimuddin': 23,
+        'shahjalalUniversity': 22,
+        'mirpur12': 24,
+        'mirpur10': 25,
+        'agargaon': 27,
+        'farmgate': 29,
+        'shaplaChattar': 28,
+        'banglamotor': 30,
+        'shahbagh': 28,
+        'motijheel': 36,
+        'kamalapur': 38
+    },
+    'motijheel': {
+        'uttaraNorth': 29,
+        'uttaraSouth': 28,
+        'jasimuddin': 24,
+        'shahjalalUniversity': 31,
+        'mirpur12': 26,
+        'mirpur10': 29,
+        'agargaon': 30,
+        'farmgate': 31,
+        'shaplaChattar': 30,
+        'banglamotor': 32,
+        'shahbagh': 33,
+        'dhakaUniversity': 36,
+        'kamalapur': 40
+    },
+    'kamalapur': {
+        'uttaraNorth': 30,
+        'uttaraSouth': 29,
+        'jasimuddin': 25,
+        'shahjalalUniversity': 32,
+        'mirpur12': 27,
+        'mirpur10': 30,
+        'agargaon': 32,
+        'farmgate': 32,
+        'shaplaChattar': 32,
+        'banglamotor': 35,
+        'shahbagh': 34,
+        'dhakaUniversity': 38,
+        'motijheel': 40
+    }
+};
+
+
+    // Function to calculate fare based on selected stations
+    function calculateFare() {
+        const fromStation = document.getElementById('calc-from').value;
+        const toStation = document.getElementById('calc-to').value;
+        let cost = 0;
+
+        // Check if the stations exist in the fare structure and calculate the fare
+        if (fareStructure[fromStation] && fareStructure[fromStation][toStation] !== undefined) {
+            cost = fareStructure[fromStation][toStation];
+        }
+
+        // Display the calculated fare
+        document.getElementById('total-cost').textContent = `Total Cost: ${cost} BDT`;
+    }
+</script>
+
+</body>
+</html>

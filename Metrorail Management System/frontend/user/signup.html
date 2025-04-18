@@ -1,0 +1,120 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        /* CSS remains unchanged for styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .signup-container {
+            background: #ffffff;
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .signup-container h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .signup-container label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        .signup-container input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .signup-container input:focus {
+            border-color: #007bff;
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+
+        .signup-container button {
+            width: 100%;
+            padding: 10px;
+            background: #007bff;
+            border: none;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .signup-container button:hover {
+            background: #0056b3;
+        }
+
+        .signup-container p {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .signup-container p a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .signup-container p a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="signup-container">
+        <h2>Sign Up</h2>
+        <form method="POST" action="/Metrorail%20Management%20System/backend/user/signup.php">
+
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="PhoneNumber">Phone Number</label>
+            <input type="tel" id="phoneNumber" name="phoneNumber" required>
+
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="confirm-password">Confirm Password</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+
+            <button type="submit">Create Account</button>
+        </form>
+        <p>Already have an account? <a href="login.php">Log in</a></p>
+    </div>
+    
+</body>
+</html>
